@@ -7,7 +7,7 @@ folder structure:
         |---Assignment1/
         |         |
         |         |---Question.md
-        |         |---solution.sql
+        |         |---solution_solution.sql
         |
         |---Assignment2/
         |

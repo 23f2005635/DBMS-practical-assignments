@@ -1,4 +1,6 @@
--- -- 3. Create a table Student with following columns:
+--# Part A: DDL (Structure / Table Creation)
+
+-- 3. Create a table Student with following columns:
 --        ○ RollNo INT
 --        ○ Name VARCHAR(50)
 --        ○ Dept VARCHAR(20)

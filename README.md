@@ -1,2 +1,2 @@
-# DBMS-practical-assignments
-Lab assignment of DBMS (BPMCE)
+# DBMS-Laboratary-assignments(BPMCE)
+

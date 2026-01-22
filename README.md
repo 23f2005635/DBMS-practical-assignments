@@ -1,6 +1,6 @@
 # DBMS-Laboratary-assignments(BPMCE)
 
-folder structure:
+<p>folder structure:
   DBMS-practical-assignments
         |
         |
@@ -16,3 +16,4 @@ folder structure:
         .
         .
         .
+</p>

@@ -23,7 +23,7 @@ CREATE TABLE Faculty (
         FOREIGN KEY (Department_Id)
         REFERENCES Department(Department_Id)
 );
-
+/*
  DESC Faculty
  Name                                      Null?    Type
  ----------------------------------------- -------- ----------------------------
@@ -32,7 +32,7 @@ CREATE TABLE Faculty (
  EMAIL                                              VARCHAR2(100)
  DESIGNATION                                        VARCHAR2(50)
  DEPARTMENT_ID                                      NUMBER
-
+*/
 
 
 CREATE TABLE Course (
@@ -44,7 +44,7 @@ CREATE TABLE Course (
         FOREIGN KEY (Department_Id)
         REFERENCES Department(Department_Id)
 );
-
+/*
  DESC Course
  Name                                      Null?    Type
  ----------------------------------------- -------- ----------------------------
@@ -53,7 +53,7 @@ CREATE TABLE Course (
  CREDITS                                            NUMBER
  DEPARTMENT_ID                                      NUMBER
 
-
+*/
 CREATE TABLE Student (
     Student_Id NUMBER PRIMARY KEY,
     Name VARCHAR2(50) NOT NULL,
@@ -62,6 +62,7 @@ CREATE TABLE Student (
     Contact_Number VARCHAR2(15)
 );
 
+/*
 DESC Student
  Name                                      Null?    Type
  ----------------------------------------- -------- ----------------------------
@@ -70,6 +71,7 @@ DESC Student
  GENDER                                             VARCHAR2(10)
  DATE_OF_BIRTH                                      DATE
  CONTACT_NUMBER                                     VARCHAR2(15)
+*/
 
 CREATE TABLE Enrollment (
     Student_Id NUMBER,
@@ -84,12 +86,14 @@ CREATE TABLE Enrollment (
         REFERENCES Course(Course_Id)
 );
 
+/*
 DESC Enrollment
  Name                                      Null?    Type
  ----------------------------------------- -------- ----------------------------
  STUDENT_ID                                NOT NULL NUMBER
  COURSE_ID                                 NOT NULL NUMBER
  SEMESTER                                           VARCHAR2(20)
+*/
 
 CREATE TABLE Teaches (
     Faculty_Id NUMBER,
@@ -103,8 +107,10 @@ CREATE TABLE Teaches (
         REFERENCES Course(Course_Id)
 );
 
+/*
 DESC Teaches
  Name                                      Null?    Type
  ----------------------------------------- -------- ----------------------------
  FACULTY_ID                                NOT NULL NUMBER
  COURSE_ID                                 NOT NULL NUMBER
+*/

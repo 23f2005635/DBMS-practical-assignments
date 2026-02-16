@@ -1,4 +1,30 @@
-CREATE TABLE Department (
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Mon Feb 16 12:20:38 2026
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+Enter user-name: system
+Enter password:
+ERROR:
+ORA-01017: invalid username/password; logon denied
+
+
+Enter user-name: 23723
+Enter password:
+ERROR:
+ORA-01017: invalid username/password; logon denied
+
+
+Enter user-name: system
+Enter password:
+Last Successful login time: Fri Feb 13 2026 14:45:51 +05:30
+
+Connected to:
+Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL> CREATE TABLE Department (
   2          Department_Id NUMBER PRIMARY KEY,
   3          Name VARCHAR2(50) NOT NULL,
   4          Office_Location VARCHAR2(100)
@@ -702,3 +728,96 @@ SQL> insert into Student values('23157128007','Shreya','Female',TO_DATE('13/08/2
 SQL> commit;
 
 Commit complete.
+
+SQL> insert into Student values('23157128008','Faizan','male',TO_DATE('14/08/2004','DD-MM-YYYY'),'89536674063','D105');
+
+1 row created.
+
+SQL> insert into Student values('23157128010','Rajiv','male',TO_DATE('15/08/2004','DD-MM-YYYY'),'89536534063','D106');
+
+1 row created.
+
+SQL> select * from department
+  2  ;
+
+DEPARTMENT_ID                  NAME                                     OFFICE_LOCATION
+------------------------------ ---------------------------------------- ----------------------------------------------------------------------------------------------------
+D101                           Civil engineering                        blockA
+D102                           Civil engineering with computer applicat blockA
+D103                           Mechanical Engineering                   blockB
+D104                           Electrical Engineering                   blockC
+D105                           Compter science                          blockD
+D106                           Artificial Intelligence                  blockE
+D107                           3D Animation                             blockF
+D108                           Data Science                             blockG
+D109                           IOT                                      blockH
+D110                           Applied Science                          blockI
+
+10 rows selected.
+
+SQL> select * from Faculty;
+
+FACU NAME                                     EMAIL                                                                                                DESIGNATION                                        DEPARTMENT_ID
+---- ---------------------------------------- ---------------------------------------------------------------------------------------------------- -------------------------------------------------- ------------------------------
+F101 Sujeet Sir                               ksujeet@gmail.com                                                                                    Professor                                          D106
+F102 Manish sir                               manish@gmail.com                                                                                     Professor                                          D110
+F103 Arman sir                                arman@gmail.com                                                                                      Professor                                          D105
+F104 Ankita mam                               ankita@gmail.com                                                                                     Professor                                          D101
+F105 Navin mam                                navin@gmail.com                                                                                      Professor                                          D102
+F106  roshan sir                              roshan@gmail.com                                                                                     Professor                                          D103
+F107 Rajnish sir                              rajnish@gmail.com                                                                                    Professor                                          D104
+F108 Rajeev sir                               Rajeev@gmail.com                                                                                     Professor                                          D107
+F109 Harshit sir                              harshit@gmail.com                                                                                    Professor                                          D108
+F110 Prince sir                               Prince@gmail.com                                                                                     Hod                                                D109
+
+10 rows selected.
+
+SQL> select * from Course;
+
+COUR COURSE_NAME                                                                                             CREDITS DEPARTMENT_ID                  FACU
+---- ---------------------------------------------------------------------------------------------------- ---------- ------------------------------ ----
+ai1  dbms                                                                                                          3 D106                           F101
+ai2  Comp.Network                                                                                                  3 D106                           F102
+cse1 Maths                                                                                                         4 D105                           F103
+cse2 dis.Maths                                                                                                     4 D105                           F104
+ds01 machine learning                                                                                              2 D106                           F105
+IOT1 internet of things                                                                                            5 D109                           F110
+Ds02 Data Science                                                                                                  5 D109                           F109
+EE01 Communication and signal system                                                                               5 D104                           F107
+CE01 Blueprint of building                                                                                         5 D102                           F104
+HS01 Chemistry                                                                                                     5 D110                           F102
+
+10 rows selected.
+
+SQL> select * from Student;
+
+STUDENT_ID  NAME                                     GENDER     DATE_OF_B CONTACT_NUMBER  DEPARTMENT_ID
+----------- ---------------------------------------- ---------- --------- --------------- ------------------------------
+23157128001 Simran                                   Female     10-AUG-04 9534474063      D101
+23157128002 Harshit                                  male       11-AUG-04 9534574063      D102
+23157128003 Suraj                                    male       12-AUG-04 9534564063      D103
+23157128005 Nishant                                  Female     12-AUG-04 9522574063      D103
+23157128007 Shreya                                   Female     13-AUG-04 89534574063     D104
+23157128008 Faizan                                   male       14-AUG-04 89536674063     D105
+23157128010 Rajiv                                    male       15-AUG-04 89536534063     D106
+
+7 rows selected.
+
+SQL> CREATE TABLE Enrollment (
+  2      Entrollment_Id char(4),
+  3      Grade char(1),
+  4      Student_Id CHAR(11),
+  5      Course_Id CHAR(4),
+  6      Semester VARCHAR2(20),
+  7      CONSTRAINT pk_enrollment PRIMARY KEY (Student_Id, Course_Id),
+  8      CONSTRAINT fk_enroll_student
+  9          FOREIGN KEY (Student_Id)
+ 10          REFERENCES Student(Student_Id),
+ 11      CONSTRAINT fk_enroll_course
+ 12          FOREIGN KEY (Course_Id)
+ 13          REFERENCES Course(Course_Id)
+ 14  );
+
+Table created.
+
+SQL>

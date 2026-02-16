@@ -58,17 +58,7 @@ CREATE TABLE Course (
  DEPARTMENT_ID                                      NUMBER
 
 */
-CREATE TABLE Student (
-    Student_Id CHAR(11) PRIMARY KEY,
-    Name VARCHAR2(50) NOT NULL,
-    Gender VARCHAR2(10),
-    Date_of_Birth DATE,
-    Contact_Number VARCHAR2(15),
-    Department_Id CHAR(4),
-    CONSTRAINT fk_student_dept
-        FOREIGN KEY (Department_Id)
-        REFERENCES Department(Department_Id)
-);
+
 
 /*
 DESC Student
@@ -82,6 +72,8 @@ DESC Student
 */
 
 CREATE TABLE Enrollment (
+    Entrollment_Id char(4),
+    Grade char(1),
     Student_Id CHAR(11),
     Course_Id CHAR(4),
     Semester VARCHAR2(20),

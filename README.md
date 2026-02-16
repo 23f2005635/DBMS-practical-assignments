@@ -10,6 +10,21 @@ folder structure:
         |         |---solution_solution.sql
         |
         |---Assignment2/
+        |          |----Create.Sql
+        |          |----Part B.pdf
+        |          |----Question.md
+        |          |----PartA.pdf
+        |---Assignmnet3/
+        |          |----Data_pics/
+        |          |----Insertion_code.sql
+        |          |----Question.md
+        |
+        |
+        |
+        |
+        |
+        |
+        |
         |
         |---readme.md
         .

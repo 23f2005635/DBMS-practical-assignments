@@ -1,5 +1,5 @@
 CREATE TABLE Department (
-        Department_Id NUMBER PRIMARY KEY,
+        Department_Id CHAR(4) PRIMARY KEY,
         Name VARCHAR2(50) NOT NULL,
         Office_Location VARCHAR2(100)
     );
@@ -14,11 +14,11 @@ DESC Department;
 
 
 CREATE TABLE Faculty (
-    Faculty_Id NUMBER PRIMARY KEY,
+    Faculty_Id CHAR(4) PRIMARY KEY,
     Name VARCHAR2(50) NOT NULL,
     Email VARCHAR2(100) UNIQUE,
     Designation VARCHAR2(50),
-    Department_Id NUMBER,
+    Department_Id CHAR(4),
     CONSTRAINT fk_faculty_dept
         FOREIGN KEY (Department_Id)
         REFERENCES Department(Department_Id)
@@ -36,13 +36,17 @@ CREATE TABLE Faculty (
 
 
 CREATE TABLE Course (
-    Course_Id NUMBER PRIMARY KEY,
+    Course_Id CHAR(4) PRIMARY KEY,
     Course_Name VARCHAR2(100) NOT NULL,
     Credits NUMBER,
-    Department_Id NUMBER,
+    Department_Id CHAR(4),
+    Faculty_Id CHAR(4),
     CONSTRAINT fk_course_dept
         FOREIGN KEY (Department_Id)
-        REFERENCES Department(Department_Id)
+        REFERENCES Department(Department_Id),
+    CONSTRAINT fk_course_faculty
+        FOREIGN KEY (Faculty_Id)
+        REFERENCES Faculty(Faculty_Id)
 );
 /*
  DESC Course
@@ -55,11 +59,15 @@ CREATE TABLE Course (
 
 */
 CREATE TABLE Student (
-    Student_Id NUMBER PRIMARY KEY,
+    Student_Id CHAR(11) PRIMARY KEY,
     Name VARCHAR2(50) NOT NULL,
     Gender VARCHAR2(10),
     Date_of_Birth DATE,
-    Contact_Number VARCHAR2(15)
+    Contact_Number VARCHAR2(15),
+    Department_Id CHAR(4),
+    CONSTRAINT fk_student_dept
+        FOREIGN KEY (Department_Id)
+        REFERENCES Department(Department_Id)
 );
 
 /*
@@ -74,8 +82,8 @@ DESC Student
 */
 
 CREATE TABLE Enrollment (
-    Student_Id NUMBER,
-    Course_Id NUMBER,
+    Student_Id CHAR(11),
+    Course_Id CHAR(4),
     Semester VARCHAR2(20),
     CONSTRAINT pk_enrollment PRIMARY KEY (Student_Id, Course_Id),
     CONSTRAINT fk_enroll_student
@@ -95,22 +103,3 @@ DESC Enrollment
  SEMESTER                                           VARCHAR2(20)
 */
 
-CREATE TABLE Teaches (
-    Faculty_Id NUMBER,
-    Course_Id NUMBER,
-    CONSTRAINT pk_teaches PRIMARY KEY (Faculty_Id, Course_Id),
-    CONSTRAINT fk_teach_faculty
-        FOREIGN KEY (Faculty_Id)
-        REFERENCES Faculty(Faculty_Id),
-    CONSTRAINT fk_teach_course
-        FOREIGN KEY (Course_Id)
-        REFERENCES Course(Course_Id)
-);
-
-/*
-DESC Teaches
- Name                                      Null?    Type
- ----------------------------------------- -------- ----------------------------
- FACULTY_ID                                NOT NULL NUMBER
- COURSE_ID                                 NOT NULL NUMBER
-*/

@@ -51,19 +51,19 @@ INSERT INTO Faculty VALUES ('AIF4', 'Md. Izhar', 'mdizhar1996@gmail.com', 'Assis
 
 INSERT INTO Course VALUES ('DBMS', 'Database Management System', 3, 'AI01','AIF1');
 
-INSERT INTO Course VALUES ('CN', 'Computer Network', 3, 'AI01','AIF4');
+INSERT INTO Course VALUES ('CN', 'Computer Network', 2, 'AI01','AIF4');
 
-INSERT INTO Course VALUES ('AI', 'Artificial Intelligence', 3, 'AI01','AIF3');
+INSERT INTO Course VALUES ('AI', 'Artificial Intelligence', 4, 'AI01','AIF3');
 
-INSERT INTO Course VALUES ('ML', 'Machine Learning', 3, 'AI01','AIF2');
+INSERT INTO Course VALUES ('ML', 'Machine Learning', 6, 'AI01','AIF2');
 
 INSERT INTO Course VALUES ('DSA', 'Data Structure and Algorithm', 3, 'AI01','AIF2');
 
 INSERT INTO Course VALUES ('DE', 'Digital Electronics', 3, 'CS01','CSF2');
 
-INSERT INTO Course VALUES ('BEE', 'Basic Electrical Engineering', 3, 'EE01','EEF1');
+INSERT INTO Course VALUES ('BEE', 'Basic Electrical Engineering', 2, 'EE01','EEF1');
 
-INSERT INTO Course VALUES ('DAA', 'Design and analysis of Algorithm', 3, 'AI01','AIF4');
+INSERT INTO Course VALUES ('DAA', 'Design and analysis of Algorithm', 5, 'AI01','AIF4');
 
 INSERT INTO Course VALUES ('CP', 'C Programming', 3, 'CS01','CSF1');
 
@@ -73,23 +73,23 @@ INSERT INTO Course VALUES ('EGD', 'Engineering Graphic', 1, 'ME01','MEF1');
 
 
 
-INSERT INTO Student VALUES ('23157128001', 'Simran Kumari','Female',TO_DATE('11/08/2004','DD-MM-YYYY'), '9709632502','AI01');
+INSERT INTO Student VALUES ('23157128001', 'Simran Kumari','Female',TO_DATE('11/08/2000','DD-MM-YYYY'), '9709632502','AI01');
 
-INSERT INTO Student VALUES ('23157128002', 'Harshit Kumar','Male',TO_DATE('12/08/2004','DD-MM-YYYY'), '9706932502','AI01');
+INSERT INTO Student VALUES ('23157128002', 'Harshit Kumar','Male',TO_DATE('12/08/2003','DD-MM-YYYY'), '9706932502','AI01');
 
-INSERT INTO Student VALUES ('23157128004', 'Nasir Iqbal','Male',TO_DATE('13/08/2004','DD-MM-YYYY'), '9706392502','AI01');
+INSERT INTO Student VALUES ('23157128004', 'Nasir Iqbal','Male',TO_DATE('13/08/2002','DD-MM-YYYY'), '9706392502','AI01');
 
-INSERT INTO Student VALUES ('23157128005', 'Nishant Kumar','Male',TO_DATE('13/08/2004','DD-MM-YYYY'), '9760932502','AI01');
+INSERT INTO Student VALUES ('23157128005', 'Nishant Kumar','Male',TO_DATE('13/08/2001','DD-MM-YYYY'), '9760932502','AI01');
 
-INSERT INTO Student VALUES ('23157128007', 'Shalini Shreya','Female',TO_DATE('14/08/2004','DD-MM-YYYY'), '9706923502','AI01');
+INSERT INTO Student VALUES ('23157128007', 'Shalini Shreya','Female',TO_DATE('14/08/2006','DD-MM-YYYY'), '9706923502','AI01');
 
-INSERT INTO Student VALUES ('23157128008', 'Faizan','Male',TO_DATE('15/08/2004','DD-MM-YYYY'), '9706923502','AI01');
+INSERT INTO Student VALUES ('23157128008', 'Faizan','Male',TO_DATE('15/08/2003','DD-MM-YYYY'), '9706923502','AI01');
 
-INSERT INTO Student VALUES ('23157128010', 'Rajeev','Male',TO_DATE('16/08/2004','DD-MM-YYYY'), '9760932502','AI01');
+INSERT INTO Student VALUES ('23157128010', 'Rajeev','Male',TO_DATE('16/08/2008','DD-MM-YYYY'), '9760932502','AI01');
 
-INSERT INTO Student VALUES ('23157128011', 'Navin Kumar','Male',TO_DATE('17/08/2004','DD-MM-YYYY'), '9706239502','AI01');
+INSERT INTO Student VALUES ('23157128011', 'Navin Kumar','Male',TO_DATE('17/08/1999','DD-MM-YYYY'), '9706239502','AI01');
 
-INSERT INTO Student VALUES ('23157128012', 'Prince Kumar','Male',TO_DATE('18/08/2004','DD-MM-YYYY'), '9706932520','AI01');
+INSERT INTO Student VALUES ('23157128012', 'Arman Kumar','Male',TO_DATE('18/08/2001','DD-MM-YYYY'), '9706932520','AI01');
 
 INSERT INTO Student VALUES ('23157128013', 'Prince Kumar','Male',TO_DATE('14/08/2004','DD-MM-YYYY'), '7257874494','AI01');
 
@@ -107,7 +107,7 @@ INSERT INTO Enrollment VALUES ('ED04', 'A','23157128013','DAA','4th');
 
 INSERT INTO Enrollment VALUES ('ED05', 'B','23157128013','BEE','3rd');
 
-INSERT INTO Enrollment VALUES ('ED06', 'c','23157128011','DAA','5th');
+INSERT INTO Enrollment VALUES ('ED06', 'C','23157128011','DAA','5th');
 
 INSERT INTO Enrollment VALUES ('ED07', 'A+','23157128012','DAA','4th');
 

@@ -1,0 +1,56 @@
+SQL> select s.Student_Id , s.Name , e.Course_Id
+  2    from Student s inner join Enrollment e
+  3    on s.Student_Id = e.Student_Id;
+
+STUDENT_ID  NAME                                               COUR
+----------- -------------------------------------------------- ----
+23157128007 Shalini Shreya                                     DSA
+23157128011 Navin Kumar                                        DAA
+23157128011 Navin Kumar                                        DBMS
+23157128011 Navin Kumar                                        DE
+23157128012 Arman Kumar                                        DAA
+23157128013 Prince Kumar                                       BEE
+23157128013 Prince Kumar                                       DAA
+23157128013 Prince Kumar                                       DBMS
+23157128013 Prince Kumar                                       DE
+23157128013 Prince Kumar                                       DSA
+
+10 rows selected.
+
+SQL> select  s.Name , e.Semester
+  2    from Student s inner join Enrollment e
+  3    on s.Student_Id = e.Student_Id;
+
+NAME                                               SEMESTER
+-------------------------------------------------- --------------------
+Prince Kumar                                       5th
+Navin Kumar                                        5th
+Navin Kumar                                        4th
+Prince Kumar                                       4th
+Prince Kumar                                       3rd
+Navin Kumar                                        5th
+Arman Kumar                                        4th
+Prince Kumar                                       4th
+Prince Kumar                                       3rd
+Shalini Shreya                                     3rd
+
+10 rows selected.
+
+SQL> select  e.Course_Id,s.Name , e.grade
+  2    from Student s inner join Enrollment e
+  3    on s.Student_Id = e.Student_Id;
+
+COUR NAME                                               GR
+---- -------------------------------------------------- --
+DBMS Prince Kumar                                       A+
+DBMS Navin Kumar                                        A
+DE   Navin Kumar                                        A+
+DAA  Prince Kumar                                       A
+BEE  Prince Kumar                                       B
+DAA  Navin Kumar                                        C
+DAA  Arman Kumar                                        A+
+DE   Prince Kumar                                       A+
+DSA  Prince Kumar                                       A+
+DSA  Shalini Shreya                                     B
+
+10 rows selected.

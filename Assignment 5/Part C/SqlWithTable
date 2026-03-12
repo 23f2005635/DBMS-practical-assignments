@@ -1,0 +1,76 @@
+SQL> select s.Name,c.Course_Name
+  2    from Student s inner join Enrollment e on s.Student_Id=e.Student_Id
+  3    inner join Course c on e.Course_Id=c.Course_Id;
+
+NAME                         COURSE_NAME
+---------------------------- ---------------------------------
+Navin Kumar                  Database Management System
+Prince Kumar                 Database Management System
+Shalini Shreya               Data Structure and Algorithm
+Prince Kumar                 Data Structure and Algorithm
+Navin Kumar                  Digital Electronics
+Prince Kumar                 Digital Electronics
+Prince Kumar                 Basic Electrical Engineering
+Navin Kumar                  Design and analysis of Algorithm
+Arman Kumar                  Design and analysis of Algorithm
+Prince Kumar                 Design and analysis of Algorithm
+
+10 rows selected.
+
+
+
+
+
+SQL> select s.Name,c.Course_Name,e.Semester
+  2    from Student s inner join Enrollment e on s.Student_Id=e.Student_Id
+  3    inner join Course c on e.Course_Id=c.Course_Id;
+
+NAME            COURSE_NAME                       SEMESTER
+--------------- --------------------------------- --------------------
+Prince Kumar    Database Management System        5th
+Navin Kumar     Database Management System        5th
+Prince Kumar    Data Structure and Algorithm      3rd
+Shalini Shreya  Data Structure and Algorithm      3rd
+Navin Kumar     Digital Electronics               4th
+Prince Kumar    Digital Electronics               4th
+Prince Kumar    Basic Electrical Engineering      3rd
+Prince Kumar    Design and analysis of Algorithm  4th
+Navin Kumar     Design and analysis of Algorithm  5th
+Arman Kumar     Design and analysis of Algorithm  4th
+
+10 rows selected.
+
+
+
+
+SQL> select s.Name,c.Course_Name,e.Grade
+  2    from Student s inner join Enrollment e on s.Student_Id=e.Student_Id
+  3    inner join Course c on e.Course_Id=c.Course_Id
+  4    where e.Semester='4th';
+
+NAME            COURSE_NAME                       GR
+--------------- --------------------------------- --
+Navin Kumar     Digital Electronics               A+
+Prince Kumar    Digital Electronics               A+
+Arman Kumar     Design and analysis of Algorithm  A+
+Prince Kumar    Design and analysis of Algorithm  A
+
+
+
+
+
+
+SQL> select c.Course_Name
+  2    from Student s inner join Enrollment e on s.Student_Id=e.Student_Id
+  3    inner join Course c on e.Course_Id=c.Course_Id
+  4    where s.Student_Id=23157128013;
+
+COURSE_NAME
+---------------------------------
+Database Management System
+Data Structure and Algorithm
+Digital Electronics
+Basic Electrical Engineering
+Design and analysis of Algorithm
+
+

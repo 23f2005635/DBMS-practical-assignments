@@ -1,0 +1,56 @@
+SQL> select  c.Course_Name,c.Credits,f.Name
+  2    from Course c inner join Faculty f
+  3    on c.Faculty_Id=f.Faculty_Id;
+
+COURSE_NAME                          CREDITS NAME
+--------------------------------- ---------- ----------------------------
+Engineering Graphic                        1 Arbind Kumar Amar
+Basic Electrical Engineering               2 Hare Krishna Mishra
+C Programming                              3 Murlidhar Prasad Singh
+Digital Electronics                        3 Arun Kumar
+Database Management System                 3 Sujeet Kumar
+Machine Learning                           6 Praveen Kumar
+Data Structure and Algorithm               3 Praveen Kumar
+Artificial Intelligence                    4 Md. Ehteshamoul Hoque
+Computer Network                           2 Md. Izhar
+Design and analysis of Algorithm           5 Md. Izhar
+
+10 rows selected.
+
+SQL> select c.Course_Name , f.Faculty_Id
+  2    from Faculty f inner join Course c
+  3    on f.Faculty_Id=c.Faculty_Id
+  4    where f.Faculty_Id='AIF2';
+
+COURSE_NAME                       FACU
+--------------------------------- ----
+Machine Learning                  AIF2
+Data Structure and Algorithm      AIF2
+
+
+
+SQL> select  f.Faculty_Id,f.Designation,c.Course_Name
+  2    from Faculty f inner join Course c
+  3    on f.Faculty_Id=c.Faculty_Id;
+
+FACULTY_ID DESIGNATION                         COURSE_NAME
+---------- ----------------------------------- ---------------------------------
+MEF1       Associate Professor, Principal-in-c Engineering Graphic
+           harge
+
+EEF1       Assistant Professor                 Basic Electrical Engineering
+CSF1       Assistant Professor                 C Programming
+CSF2       Assistant Professor                 Digital Electronics
+AIF1       Assistant Professor                 Database Management System
+AIF2       Assistant Professor                 Machine Learning
+AIF2       Assistant Professor                 Data Structure and Algorithm
+AIF3       Assistant Professor                 Artificial Intelligence
+AIF4       Assistant Professor                 Computer Network
+
+FACULTY_ID DESIGNATION                         COURSE_NAME
+---------- ----------------------------------- ---------------------------------
+AIF4       Assistant Professor                 Design and analysis of Algorithm
+
+10 rows selected.
+
+

@@ -1,0 +1,67 @@
+SQL> select s.Name, c.Course_Name
+  2    from Student s inner join Enrollment e on s.Student_Id=e.Student_Id
+  3    inner join Course c on e.Course_Id=c.Course_Id
+  4    where s.Department_Id='AI01';
+
+NAME                                          COURSE_NAME
+--------------------------------------------- ---------------------------------
+Navin Kumar                                   Database Management System
+Prince Kumar                                  Database Management System
+Shalini Shreya                                Data Structure and Algorithm
+Prince Kumar                                  Data Structure and Algorithm
+Navin Kumar                                   Digital Electronics
+Prince Kumar                                  Digital Electronics
+Prince Kumar                                  Basic Electrical Engineering
+Navin Kumar                                   Design and analysis of Algorithm
+Arman Kumar                                   Design and analysis of Algorithm
+Prince Kumar                                  Design and analysis of Algorithm
+
+10 rows selected.
+
+
+
+
+
+SQL> select s.Name,c.Course_Name
+  2    from Student s inner join Enrollment e on s.Student_Id=e.Student_Id
+  3    inner join Course c on e.Course_Id=c.Course_Id
+  4    order by s.Name Asc;
+
+NAME                                          COURSE_NAME
+--------------------------------------------- ---------------------------------
+Arman Kumar                                   Design and analysis of Algorithm
+Navin Kumar                                   Database Management System
+Navin Kumar                                   Digital Electronics
+Navin Kumar                                   Design and analysis of Algorithm
+Prince Kumar                                  Design and analysis of Algorithm
+Prince Kumar                                  Digital Electronics
+Prince Kumar                                  Basic Electrical Engineering
+Prince Kumar                                  Database Management System
+Prince Kumar                                  Data Structure and Algorithm
+Shalini Shreya                                Data Structure and Algorithm
+
+10 rows selected.
+
+
+
+
+
+
+SQL> select f.Name, c.Course_Name
+  2    from Faculty f inner join Course c on f.Faculty_Id=c.Faculty_Id
+  3    order by c.Credits desc;
+
+NAME                                          COURSE_NAME
+--------------------------------------------- ---------------------------------
+Praveen Kumar                                 Machine Learning
+Md. Izhar                                     Design and analysis of Algorithm
+Md. Ehteshamoul Hoque                         Artificial Intelligence
+Arun Kumar                                    Digital Electronics
+Murlidhar Prasad Singh                        C Programming
+Sujeet Kumar                                  Database Management System
+Praveen Kumar                                 Data Structure and Algorithm
+Md. Izhar                                     Computer Network
+Hare Krishna Mishra                           Basic Electrical Engineering
+Arbind Kumar Amar                             Engineering Graphic
+
+10 rows selected.

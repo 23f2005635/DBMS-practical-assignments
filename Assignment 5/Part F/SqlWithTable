@@ -1,0 +1,73 @@
+SQL> select c.Course_Name,count(s.Student_Id) as TotalStudent
+  2    from Student s inner join Enrollment e on s.Student_Id=e.Student_Id
+  3    inner join Course c on e.Course_Id=c.Course_Id
+  4    group by c.Course_Name;
+
+COURSE_NAME                       TOTALSTUDENT
+--------------------------------- ------------
+Database Management System                   2
+Data Structure and Algorithm                 2
+Digital Electronics                          2
+Basic Electrical Engineering                 1
+Design and analysis of Algorithm             3
+
+
+
+
+SQL> select f.Name,count(c.Course_Name) as TotalCourse
+  2    from Faculty f inner join Course c on c.Faculty_Id=f.Faculty_Id
+  3    group by f.Name;
+
+NAME                                               TOTALCOURSE
+-------------------------------------------------- -----------
+Arbind Kumar Amar                                            1
+Hare Krishna Mishra                                          1
+Murlidhar Prasad Singh                                       1
+Arun Kumar                                                   1
+Sujeet Kumar                                                 1
+Praveen Kumar                                                2
+Md. Ehteshamoul Hoque                                        1
+Md. Izhar                                                    2
+
+8 rows selected.
+
+
+
+
+SQL> select d.Name as DepartmentName,count(s.Name) as TotalStudent
+  2    from Department d inner join Student s on d.Department_Id=s.Department_Id
+  3    group by d.Name;
+
+DEPARTMENTNAME                                     TOTALSTUDENT
+-------------------------------------------------- ------------
+Artificial Intelligence and Machine Learning                 10
+
+
+
+
+
+SQL> SELECT c.Course_Name,
+  2         CASE MAX(
+  3              CASE e.Grade
+  4                  WHEN 'A+' THEN 4
+  5                  WHEN 'A'  THEN 3
+  6                  WHEN 'B'  THEN 2
+  7                  WHEN 'C'  THEN 1
+  8              END)
+  9              WHEN 4 THEN 'A+'
+ 10              WHEN 3 THEN 'A'
+ 11              WHEN 2 THEN 'B'
+ 12              WHEN 1 THEN 'C'
+ 13         END AS Max_Grade
+ 14  FROM Course c
+ 15  JOIN Enrollment e
+ 16  ON c.Course_Id = e.Course_Id
+ 17  GROUP BY c.Course_Name;
+
+COURSE_NAME                       MA
+--------------------------------- --
+Database Management System        A+
+Digital Electronics               A+
+Design and analysis of Algorithm  A+
+Basic Electrical Engineering      B
+Data Structure and Algorithm      A+

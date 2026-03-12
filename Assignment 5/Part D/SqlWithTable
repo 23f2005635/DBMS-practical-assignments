@@ -1,0 +1,68 @@
+SQL> select s.Name,s.Department_Id,c.Course_Name
+  2    from Student s inner join Enrollment e on s.Student_Id=e.Student_Id
+  3    inner join Course c on c.Course_Id=e.Course_Id;
+
+NAME            DEPA COURSE_NAME
+--------------- ---- ---------------------------------
+Navin Kumar     AI01 Database Management System
+Prince Kumar    AI01 Database Management System
+Shalini Shreya  AI01 Data Structure and Algorithm
+Prince Kumar    AI01 Data Structure and Algorithm
+Navin Kumar     AI01 Digital Electronics
+Prince Kumar    AI01 Digital Electronics
+Prince Kumar    AI01 Basic Electrical Engineering
+Navin Kumar     AI01 Design and analysis of Algorithm
+Arman Kumar     AI01 Design and analysis of Algorithm
+Prince Kumar    AI01 Design and analysis of Algorithm
+
+10 rows selected.
+
+
+
+
+
+
+
+SQL> select d.Name,c.Course_Name
+  2    from Department d inner join Course c
+  3    on d.Department_Id=c.Department_Id;
+
+NAME                                          COURSE_NAME
+--------------------------------------------- ---------------------------------
+Artificial Intelligence and Machine Learning  Database Management System
+Artificial Intelligence and Machine Learning  Computer Network
+Artificial Intelligence and Machine Learning  Artificial Intelligence
+Artificial Intelligence and Machine Learning  Machine Learning
+Artificial Intelligence and Machine Learning  Data Structure and Algorithm
+Computer Science Engineering                  Digital Electronics
+Electrical and electronics Engineering        Basic Electrical Engineering
+Artificial Intelligence and Machine Learning  Design and analysis of Algorithm
+Computer Science Engineering                  C Programming
+Mechanical Engineering                        Engineering Graphic
+
+10 rows selected.
+
+
+
+
+
+
+SQL> select f.Name as facultyName,d.Name as DepartmentName
+  2    from Department d inner join Faculty f
+  3    on d.Department_Id=f.Department_Id;
+
+FACULTYNAME            DEPARTMENTNAME
+---------------------- ---------------------------------------------
+Akhilesh Kumar         Civil Engineering
+Kunal Kumar            Civil Engineering
+Nishikant Kumar        Civil Engineering with computer
+Arbind Kumar Amar      Mechanical Engineering
+Hare Krishna Mishra    Electrical and electronics Engineering
+Murlidhar Prasad Singh Computer Science Engineering
+Arun Kumar             Computer Science Engineering
+Sujeet Kumar           Artificial Intelligence and Machine Learning
+Praveen Kumar          Artificial Intelligence and Machine Learning
+Md. Ehteshamoul Hoque  Artificial Intelligence and Machine Learning
+Md. Izhar              Artificial Intelligence and Machine Learning
+
+11 rows selected.

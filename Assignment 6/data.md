@@ -1,4 +1,4 @@
-'''
+```
 SQL>  select COUNT(*) as Total_Student from Student;
 
 TOTAL_STUDENT
